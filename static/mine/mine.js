@@ -94,13 +94,6 @@ const randomSquare09 = function(n) {
 }
 
 
-// 获取扫雷图片资源
-const imageFromPath = (path) => {
-    let img = new Image()
-    img.src = path
-    return img
-}
-
 const drawImage = (image, x, y, callback) => {
     ctx.drawImage(image, x, y, 16, 16)
 }
@@ -136,12 +129,7 @@ const drawNumber = (game, i, j) => {
             grid[i][j] = -1
             // log('imgs', imgs)
             if (num == 0){
-                // TODO 修改空格样式
                 log('zero ', x, y)
-                // ctx.fillStyle = 'gray'
-                // ctx.clearRect(x, y , GRID_SIZE, GRID_SIZE)
-                // ctx.fillRect(x, y , 25, 25)
-                // ctx.fillRect(x + 2, y + 2 , 20, 20)
                 drawImage(imgs[num], x, y)
                 drawZero(game, i, j)
             } else {
@@ -267,7 +255,7 @@ let canvas = e('#id-canvas')
 let ctx = canvas.getContext('2d')
 ctx.font = "25px serif";
 let GRID_SIZE = 16
-let MINE_COUNT = 8
+let MINE_COUNT = 10
 let COUNT = 0
 
 __main()
